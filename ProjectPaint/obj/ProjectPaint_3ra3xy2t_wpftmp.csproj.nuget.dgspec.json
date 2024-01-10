@@ -1,0 +1,474 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\ProjectPaint\\ProjectPaint.csproj": {}
+  },
+  "projects": {
+    "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Brushes\\Brushes.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Brushes\\Brushes.csproj",
+        "projectName": "Brushes",
+        "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Brushes\\Brushes.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Brushes\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Contract\\Contract.csproj": {
+                "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Contract\\Contract.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Contract\\Contract.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Contract\\Contract.csproj",
+        "projectName": "Contract",
+        "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Contract\\Contract.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Contract\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\EllipseLib\\EllipseLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\EllipseLib\\EllipseLib.csproj",
+        "projectName": "EllipseLib",
+        "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\EllipseLib\\EllipseLib.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\EllipseLib\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\LineLib\\LineLib.csproj": {
+                "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\LineLib\\LineLib.csproj"
+              },
+              "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\RectrangleLib\\RectrangleLib.csproj": {
+                "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\RectrangleLib\\RectrangleLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\LineLib\\LineLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\LineLib\\LineLib.csproj",
+        "projectName": "LineLib",
+        "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\LineLib\\LineLib.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\LineLib\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Contract\\Contract.csproj": {
+                "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Contract\\Contract.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\ProjectPaint\\ProjectPaint.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\ProjectPaint\\ProjectPaint.csproj",
+        "projectName": "ProjectPaint",
+        "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\ProjectPaint\\ProjectPaint.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\ProjectPaint\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Brushes\\Brushes.csproj": {
+                "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Brushes\\Brushes.csproj"
+              },
+              "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Contract\\Contract.csproj": {
+                "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Contract\\Contract.csproj"
+              },
+              "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\EllipseLib\\EllipseLib.csproj": {
+                "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\EllipseLib\\EllipseLib.csproj"
+              },
+              "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\LineLib\\LineLib.csproj": {
+                "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\LineLib\\LineLib.csproj"
+              },
+              "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\RectrangleLib\\RectrangleLib.csproj": {
+                "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\RectrangleLib\\RectrangleLib.csproj"
+              },
+              "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\TextLib\\TextLib.csproj": {
+                "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\TextLib\\TextLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Extended.Wpf.Toolkit": {
+              "target": "Package",
+              "version": "[4.5.1, )"
+            },
+            "Fluent.Ribbon": {
+              "target": "Package",
+              "version": "[10.0.4, )"
+            },
+            "FontAwesome.Sharp": {
+              "target": "Package",
+              "version": "[6.3.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\RectrangleLib\\RectrangleLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\RectrangleLib\\RectrangleLib.csproj",
+        "projectName": "RectrangleLib",
+        "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\RectrangleLib\\RectrangleLib.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\RectrangleLib\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Contract\\Contract.csproj": {
+                "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\Contract\\Contract.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\TextLib\\TextLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\TextLib\\TextLib.csproj",
+        "projectName": "TextLib",
+        "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\TextLib\\TextLib.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\TextLib\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\EllipseLib\\EllipseLib.csproj": {
+                "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\EllipseLib\\EllipseLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

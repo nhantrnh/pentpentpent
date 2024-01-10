@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Img\brushes.png" />
+    <None Remove="Img\ellipse.png" />
+    <None Remove="Img\fullcolors.png" />
+    <None Remove="Img\IMAGE40724.png" />
+    <None Remove="Img\IMAGE40734.png" />
+    <None Remove="Img\IMAGE40784.png" />
+    <None Remove="Img\IMAGE40794.png" />
+    <None Remove="Img\IMAGE40804.png" />
+    <None Remove="Img\IMAGE60352.png" />
+    <None Remove="Img\line.png" />
+    <None Remove="Img\paint.png" />
+    <None Remove="Img\rectangle.png" />
+    <None Remove="Img\triangle.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.5.1" />
+    <PackageReference Include="Fluent.Ribbon" Version="10.0.4" />
+    <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Brushes\Brushes.csproj" />
+    <ProjectReference Include="..\Contract\Contract.csproj" />
+    <ProjectReference Include="..\EllipseLib\EllipseLib.csproj" />
+    <ProjectReference Include="..\LineLib\LineLib.csproj" />
+    <ProjectReference Include="..\RectrangleLib\RectrangleLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Img\brushes.png" />
+    <Resource Include="Img\ellipse.png" />
+    <Resource Include="Img\fullcolors.png" />
+    <Resource Include="Img\IMAGE40724.png" />
+    <Resource Include="Img\IMAGE40734.png" />
+    <Resource Include="Img\IMAGE40784.png" />
+    <Resource Include="Img\IMAGE40794.png" />
+    <Resource Include="Img\IMAGE40804.png" />
+    <Resource Include="Img\IMAGE60352.png" />
+    <Resource Include="Img\line.png" />
+    <Resource Include="Img\paint.png" />
+    <Resource Include="Img\rectangle.png" />
+    <Resource Include="Img\triangle.png" />
+  </ItemGroup>
+
+</Project>
