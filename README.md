@@ -25,10 +25,10 @@
       5. Zooming (Zoom in, zoom out)
       6. Undo, Redo (Command)
       7. Use Visitor design pattern (Suggestion: save objects into text file / xml file / json file / binary file)
-      8. Change size of drawing area
-      9. Adding brush drawing
-      10. Allow the user to draw by fill or no fill with color
-        
+      8. Allow the user to draw by fill or no fill with color
+      Các chức năng ngoài gợi ý của thầy:
+      9. Change size of drawing area
+      10. Adding brush drawing
 ## III. Các chức năng chưa thực hiện:
       1. Adding Layers support
       2. Select a single element for editing again. Transforming horizontally and vertically. Rotate the image. Drag & Drop
@@ -49,4 +49,5 @@
 
 
 ## VII. Một số lưu ý:
-  .NET Framework 8.0
+- .NET Framework 8.0
+- Nếu chương trình build thành công nhưng không hiển thị màn hình Paint thì copy thư mục Img vào cùng cấp với ProjectPaint.exe
