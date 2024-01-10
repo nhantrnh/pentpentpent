@@ -227,6 +227,22 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "TextLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Contract": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TextLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TextLib.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
@@ -434,6 +450,11 @@
       "type": "project",
       "path": "../RectrangleLib/RectrangleLib.csproj",
       "msbuildProject": "../RectrangleLib/RectrangleLib.csproj"
+    },
+    "TextLib/1.0.0": {
+      "type": "project",
+      "path": "../TextLib/TextLib.csproj",
+      "msbuildProject": "../TextLib/TextLib.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -446,7 +467,8 @@
       "FontAwesome.Sharp >= 6.3.0",
       "LineLib >= 1.0.0",
       "Newtonsoft.Json >= 13.0.3",
-      "RectrangleLib >= 1.0.0"
+      "RectrangleLib >= 1.0.0",
+      "TextLib >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -490,6 +512,9 @@
             },
             "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\RectrangleLib\\RectrangleLib.csproj": {
               "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\RectrangleLib\\RectrangleLib.csproj"
+            },
+            "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\TextLib\\TextLib.csproj": {
+              "projectPath": "D:\\HCMUS\\NĂM BA - HCMUS\\HKI\\WIN\\ProjectPaint\\TextLib\\TextLib.csproj"
             }
           }
         }

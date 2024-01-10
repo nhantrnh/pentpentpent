@@ -1,22 +1,26 @@
-using Contract;
+﻿using Contract;
 using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace LineLib
 {
     public class LineShape : IShape
     {
-        public override string Name => "line";
+        public string Name => "line";
+        public List<Point> Points { get; set; } = new List<Point>();
+        public StateShape? Configuration { get; set; }
+        public BitmapImage? Preview { get; set; }
         public LineShape() {
             Preview = new System.Windows.Media.Imaging.BitmapImage();
             Preview.BeginInit();
             Preview.UriSource = new Uri(RelativeToAbsoluteConverter.Convert(@"../../../Img/line.png"), UriKind.RelativeOrAbsolute);
             Preview.EndInit();
         }
-        public override UIElement Draw()
+        public UIElement Draw()
         {
             return new Line()
             {
@@ -31,7 +35,7 @@ namespace LineLib
                 StrokeDashArray = Configuration?.StrokeDash,
             };
         }
-        public override IShape Clone()
+        public IShape Clone()
         {
             return new LineShape();
         }

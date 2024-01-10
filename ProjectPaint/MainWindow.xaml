@@ -127,11 +127,6 @@
                                 </Fluent:Button.LargeIcon>
                             </Fluent:Button>
 
-                            <Fluent:Button SizeDefinition="Small" x:Name="textButton" Click="FontButton_Click">
-                                <Fluent:Button.LargeIcon>
-                                    <fa:IconImage Icon="Font" Foreground="black" ></fa:IconImage>
-                                </Fluent:Button.LargeIcon>
-                            </Fluent:Button>
                         </StackPanel>
                     </StackPanel>
                 </Fluent:RibbonGroupBox >
@@ -294,25 +289,24 @@
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
         </Fluent:Ribbon>
+            <Grid Grid.Row="1" Background="lightsteelblue">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <!-- Vùng vẽ -->
+                    <ColumnDefinition Width="Auto" />
+                    <!-- Thanh cuộn ngang -->
+                </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="1" Background="lightsteelblue">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
                 <!-- Vùng vẽ -->
-                <ColumnDefinition Width="Auto" />
-                <!-- Thanh cuộn ngang -->
-            </Grid.ColumnDefinitions>
-
-            <!-- Vùng vẽ -->
-            <ScrollViewer x:Name="drawingAreaContainer" Grid.Column="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                <Grid>
-                    <Canvas Background="Transparent" IsHitTestVisible="True"  MouseDown="Canvas_MouseDown" MouseUp="Canvas_MouseUp" MouseMove="Canvas_MouseMove" />
-                    <Canvas x:Name="drawingArea" HorizontalAlignment="Left" VerticalAlignment="Top"  IsHitTestVisible="False" ClipToBounds="True" Background="White" Height="480" Width="1040" Margin="2,0,3,0" />
-                </Grid>
-            </ScrollViewer>
-            <!-- Thanh cuộn ngang nếu zoom > 100% -->
-            <ScrollBar x:Name="horizontalScrollBar" Grid.Column="1" Visibility="Collapsed" Orientation="Horizontal" />
-        </Grid>
+                <ScrollViewer x:Name="drawingAreaContainer" Grid.Column="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Canvas Background="Transparent" IsHitTestVisible="True"  MouseDown="Canvas_MouseDown" MouseUp="Canvas_MouseUp" MouseMove="Canvas_MouseMove" />
+                        <Canvas x:Name="drawingArea" HorizontalAlignment="Left" VerticalAlignment="Top"  IsHitTestVisible="False" ClipToBounds="True" Background="White" Height="480" Width="1040" Margin="2,0,3,0" />
+                    </Grid>
+                </ScrollViewer>
+                <!-- Thanh cuộn ngang nếu zoom > 100% -->
+                <ScrollBar x:Name="horizontalScrollBar" Grid.Column="1" Visibility="Collapsed" Orientation="Horizontal" />
+         </Grid>
         <StackPanel Grid.Row="2" Background="azure" Orientation="Horizontal">
             <TextBlock Text="{Binding ElementName=zoomSlider, Path=Value, StringFormat={}{0:P0}}" VerticalAlignment="Center"/>
             <Button Content="-" Width="30" Height="30" Click="ZoomOutButton_Click">
@@ -336,7 +330,14 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            <Canvas>
+                <TextBlock x:Name="where"  Text="" Width="457" Height="22"   HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="3" Canvas.Left="116" />
+                <Button Content="Change" Width="48" Height="22" Click="ChangeSizeButton_Click" Canvas.Left="662" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="3"/>
+                <TextBox x:Name="widthPage" Text="1040" Width="42"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" Canvas.Left="770" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="3"/>
+                <TextBlock Text="x"  Width="15" Height="22" Canvas.Left="761" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Top="7"/>
+                <TextBox Name="heightPage" Text="480" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Left="716" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="41" Height="22"  Canvas.Top="3"/>
+                <TextBlock Text="px"  Width="15" Height="22" Canvas.Left="815"  HorizontalAlignment="Left"  VerticalAlignment="Center"  Canvas.Top="8"/>
+            </Canvas>
         </StackPanel>
     </Grid>
-
 </Fluent:RibbonWindow>

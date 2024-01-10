@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EllipseLib", "EllipseLib\El
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RectrangleLib", "RectrangleLib\RectrangleLib.csproj", "{37A0E332-8320-44C6-924B-B0EB9F614ACA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brushes", "Brushes\Brushes.csproj", "{70C53711-113C-4E43-BA15-15575943296D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brushes", "Brushes\Brushes.csproj", "{70C53711-113C-4E43-BA15-15575943296D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextLib", "TextLib\TextLib.csproj", "{2C376DF6-D6F9-4F69-88F6-84CDF0495971}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{70C53711-113C-4E43-BA15-15575943296D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70C53711-113C-4E43-BA15-15575943296D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70C53711-113C-4E43-BA15-15575943296D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C376DF6-D6F9-4F69-88F6-84CDF0495971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C376DF6-D6F9-4F69-88F6-84CDF0495971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C376DF6-D6F9-4F69-88F6-84CDF0495971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C376DF6-D6F9-4F69-88F6-84CDF0495971}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

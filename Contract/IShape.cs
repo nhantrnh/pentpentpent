@@ -12,14 +12,13 @@ using System.Windows.Shapes;
 
 namespace Contract
 {
-    public abstract class IShape
+    public interface IShape
     {
-        public abstract string Name { get; }
-        public string Icon { get; set; }
-        public List<Point> Points { get; set; } = new List<Point>();
-        public abstract UIElement Draw();
-        public abstract IShape Clone();
-        public StateShape? Configuration { get; set; }
-        public BitmapImage? Preview { get; set; }
+        string Name { get; }
+        List<Point> Points { get; set; }
+        UIElement Draw();
+        IShape Clone();
+        StateShape? Configuration { get; set; }
+        BitmapImage? Preview { get; set; }
     }
 }

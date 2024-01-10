@@ -6,6 +6,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace Contract
 {
@@ -22,8 +23,9 @@ namespace Contract
         public List<IShape> Shapes { get; set; }
         public List<IShape> Buffer { get; set; }
         public PointCollection Points { get; set; } = new PointCollection(); // Change the type to PointCollection
-
         public bool IsMoved { get; set; } 
+        public string Content { get; set; }
+        public double FontSize { get; set; }
         public StateShape()
         {
             IsDrawn = false;
@@ -34,6 +36,8 @@ namespace Contract
             Shapes = [];
             Buffer = [];
             IsMoved = false;
+            Content = String.Empty;
+            FontSize = 0;
         }
         public object Clone()
         {

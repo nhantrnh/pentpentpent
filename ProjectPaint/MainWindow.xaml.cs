@@ -11,11 +11,13 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.AxHost;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
@@ -30,8 +32,7 @@ namespace ProjectPaint
         public MainWindow()
         {
             InitializeComponent();
-
-        }
+        }    
         ShapeFactory _factory = new ShapeFactory();
         StateShape _stateShape = new();
         bool _isSaved = false;
@@ -39,6 +40,7 @@ namespace ProjectPaint
         bool _isUndo = false;
         string filePath = "shapeList.json";
         private bool _isEditMode = false;
+        private TextBox textInput = new TextBox();
 
         private void RibbonWindow_Loaded(object sender, RoutedEventArgs e)
         {
@@ -102,7 +104,6 @@ namespace ProjectPaint
                     }
                 }
             }
-
             _factory = new ShapeFactory();
             foreach (var ability in abilities)
             {
@@ -110,8 +111,8 @@ namespace ProjectPaint
 
                 var button = new Fluent.Button()
                 {
-                    Width = 55,
-                    Height = 40,
+                    Width = 45,
+                    Height = 35,
                     Icon = ability.Preview,
                     Tag = ability.Name
                 };
@@ -127,8 +128,7 @@ namespace ProjectPaint
             {
                 _stateShape.Choice = abilities[0].Name;
             }
-        }
-        
+        }        
         private void RibbonWindow_Closed(object sender, EventArgs e)
         {
             var settings = new JsonSerializerSettings()
@@ -141,23 +141,79 @@ namespace ProjectPaint
 
             File.WriteAllText(filePath, serializedShapes);
         }
+        private void TextInput_LostFocus(object sender, RoutedEventArgs e)
+        {
+            string inputText = textInput.Text;
 
-        private Shape _selectedShape = null;
+            TextBlock textBlock = new TextBlock
+            {
+                Text = inputText,
+                FontSize = 12,
+                Foreground = Brushes.Black,
+                Margin = new Thickness(textInput.Margin.Left, textInput.Margin.Top, 0, 0)
+            };
 
+            drawingArea.Children.Add(textBlock);
+            //drawingArea.Children.Remove(textInput);
+        }
         private void Canvas_MouseDown(object sender, MouseButtonEventArgs e)
-        {            
+        {
+            if (_stateShape.Choice == "Text")
+            {
+                Point position = e.GetPosition(drawingArea);
+
+                textInput = new TextBox
+                {
+                    Width = 200,
+                    Height = 30,
+                    BorderBrush = Brushes.Transparent,
+                    Background = Brushes.Transparent,
+                    FontSize = 13,
+                    Foreground = Brushes.Black,
+                    Margin = new Thickness(position.X, position.Y, 0, 0)
+                };
+
+                textInput.LostFocus += TextInput_LostFocus;
+
+                drawingArea.Children.Add(textInput);
+                textInput.Focus(); 
+
+                TextDrawing textDrawing = new TextDrawing();
+                textDrawing.Points.Add(position);
+                textDrawing.Configuration = _stateShape.Clone() as StateShape;
+
+                textInput.LostFocus += (sender, args) =>
+                {
+                    textDrawing.Configuration = _stateShape.Clone() as StateShape;
+                    textDrawing.Configuration.Content = textInput.Text;
+                    if (textInput.Text.Length == 0)
+                    {
+                        textDrawing.Configuration.Content = "LTW";
+                    }
+                    textDrawing.Configuration.FontSize = 13; 
+                    textDrawing.Configuration.ColorBrush = Brushes.Black;
+
+                    drawingArea.Children.Remove(textInput); 
+                    drawingArea.Children.Add(textDrawing.Draw()); 
+                    _stateShape.Shapes.Add(textDrawing);
+                     
+
+                };
+            }
             if (e.LeftButton == MouseButtonState.Pressed && _stateShape.Choice == "Brushes")
             {
                 Point position = e.GetPosition(drawingArea);
 
-                FreehandDrawing freehandDrawing = new FreehandDrawing();
-                freehandDrawing.Points.Add(position);
+                FreeBrushes freehandDrawing = new FreeBrushes();
+                freehandDrawing.Pointss.Add(position);
 
                 freehandDrawing.Configuration = _stateShape.Clone() as StateShape;
 
-                _stateShape.Shapes.Add(freehandDrawing); 
+                _stateShape.Shapes.Add(freehandDrawing);
                 drawingArea.Children.Add(freehandDrawing.Draw());
             }
+             
+
             _stateShape.IsDrawn = true;
             _stateShape.Start = e.GetPosition(drawingArea);
             drawingArea.Children.Add(new UIElement());
@@ -165,27 +221,27 @@ namespace ProjectPaint
             _stateShape.Buffer = [];
             ChangeIconColor(redoButton, Brushes.Gray);
         }
-
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
-        {
-            
+        {           
             if (e.LeftButton == MouseButtonState.Pressed && _stateShape.Choice == "Brushes")
             {
-                Point position = e.GetPosition(drawingArea); 
+                Point position = e.GetPosition(drawingArea);
 
-                FreehandDrawing freehandDrawing = _stateShape.Shapes.LastOrDefault() as FreehandDrawing;
+                FreeBrushes bruhses = _stateShape.Shapes.LastOrDefault() as FreeBrushes;
 
-                if (freehandDrawing != null)
+                if (bruhses != null)
                 {
-                    freehandDrawing.Points.Add(position);
+                    bruhses.Pointss.Add(position);
                 }
+                 
+
             }
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 if (_stateShape.IsDrawn)
                 {
                     _stateShape.End = e.GetPosition(drawingArea);
-                    Title = $"{_stateShape.Start.X}, {_stateShape.Start.Y} => {_stateShape.End.X}, {_stateShape.End.Y}";
+                    where.Text = $"{_stateShape.Start.X}, {_stateShape.Start.Y} => {_stateShape.End.X}, {_stateShape.End.Y}";
                     IShape preview = _factory.Create(_stateShape.Choice);
 
                     preview.Points.Add(_stateShape.Start);
@@ -194,10 +250,13 @@ namespace ProjectPaint
 
                     drawingArea.Children.RemoveAt(drawingArea.Children.Count - 1);
                     drawingArea.Children.Add(preview.Draw());
+                     
 
                     _stateShape.IsMoved = true;
                 }
             }
+             
+
         }
 
         private void Canvas_MouseUp(object sender, MouseButtonEventArgs e)
@@ -214,7 +273,18 @@ namespace ProjectPaint
                 _isSaved = false;
                 ChangeIconColor(undoButton, Brushes.CornflowerBlue);
                 _stateShape.IsMoved = false;
+                 
             }
+        }
+        private void NewArea()
+        {
+            drawingArea.Background = Brushes.White;
+            drawingArea.Children.Clear();
+            _stateShape.Shapes.Clear();
+            ChangeIconColor(undoButton, Brushes.Gray);
+            ChangeIconColor(undoButton, Brushes.Gray);
+            _isUndo = false;
+            
         }
         private void NewButton_Click(object sender, RoutedEventArgs e)
         {
@@ -231,12 +301,7 @@ namespace ProjectPaint
                 }
                 else if (MessageBoxResult.No == result)
                 {
-                    drawingArea.Background = Brushes.White;
-                    drawingArea.Children.Clear();
-                    _stateShape.Shapes.Clear();
-                    ChangeIconColor(undoButton, Brushes.Gray);
-                    ChangeIconColor(undoButton, Brushes.Gray);
-                    _isUndo = false;
+                    NewArea();
                 }
                 else if (MessageBoxResult.Cancel == result)
                 {
@@ -245,12 +310,7 @@ namespace ProjectPaint
             }
             else
             {
-                drawingArea.Background = Brushes.White;
-                drawingArea.Children.Clear();
-                _stateShape.Shapes.Clear();
-                ChangeIconColor(undoButton, Brushes.Gray);
-                ChangeIconColor(redoButton, Brushes.Gray);
-                _isUndo = false;
+                NewArea();
             }
         }
 
@@ -313,21 +373,13 @@ namespace ProjectPaint
                 }
                 else if (MessageBoxResult.No == result || MessageBoxResult.Cancel == result)
                 {
-                    drawingArea.Children.Clear();
-                    _stateShape.Shapes.Clear();
-                    ChangeIconColor(undoButton, Brushes.Gray);
-                    ChangeIconColor(redoButton, Brushes.Gray);
-                    _isUndo = false;
+                    NewArea();
                     OpenJSon();
                 }
             }
             else
             {
-                drawingArea.Children.Clear();
-                _stateShape.Shapes.Clear();
-                ChangeIconColor(undoButton, Brushes.Gray);
-                ChangeIconColor(redoButton, Brushes.Gray);
-                _isUndo = false;
+                NewArea();
                 OpenJSon();
             }
         }
@@ -365,7 +417,6 @@ namespace ProjectPaint
             protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
             {
                 var properties = base.CreateProperties(type, memberSerialization);
-
                 // Loại bỏ thuộc tính Preview khi serialize
                 properties = properties.Where(p => p.PropertyName != "Preview").ToList();
 
@@ -410,8 +461,6 @@ namespace ProjectPaint
 
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                _drawPath = openFileDialog.FileName;
-
                 ImageBrush brush = new ImageBrush();
                 brush.ImageSource = new BitmapImage(new Uri(openFileDialog.FileName, UriKind.Absolute));
                 drawingArea.Background = brush;
@@ -509,11 +558,6 @@ namespace ProjectPaint
         {
             
         }
-        private void PencilButton_Click(object sender, RoutedEventArgs e)
-        {
-
-
-        }
         private readonly ScaleTransform scaleTransform = new ScaleTransform();       
 
         private void ZoomInButton_Click(object sender, RoutedEventArgs e)
@@ -566,12 +610,6 @@ namespace ProjectPaint
                 zoomSlider.Value = zoomValue;
             }
         }
-
-        private void DrawGridLines()
-        {
-
-        }
-
         private void FillColorButton_Click(object sender, RoutedEventArgs e)
         {
             
@@ -579,9 +617,6 @@ namespace ProjectPaint
         private void Icon_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-        private void FontButton_Click(object sender, RoutedEventArgs e)
-        {
         }
         private void SizeChangedButton(object sender, SelectionChangedEventArgs e)
         {
@@ -816,5 +851,11 @@ namespace ProjectPaint
                 _stateShape.ColorStroke = new SolidColorBrush(Color.FromArgb(colorEdit.Color.A, colorEdit.Color.R, colorEdit.Color.G, colorEdit.Color.B));
             }
         }
+        private void ChangeSizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            drawingArea.Height = int.Parse(heightPage.Text);
+            drawingArea.Width = int.Parse(widthPage.Text);
+        }
+  
     }
 }

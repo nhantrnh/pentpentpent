@@ -1,16 +1,20 @@
-using Contract;
+﻿using Contract;
 using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace RectangleLib
 {
     public class RectangleShape : IShape
     {
-        public override string Name => "rectangle";
+        public string Name => "rectangle";
+        public List<Point> Points { get; set; } = new List<Point>();
+        public StateShape? Configuration { get; set; }
+        public BitmapImage? Preview { get; set; }
         public RectangleShape()
         {
             Preview = new System.Windows.Media.Imaging.BitmapImage();
@@ -18,18 +22,22 @@ namespace RectangleLib
             Preview.UriSource = new Uri(RelativeToAbsoluteConverter.Convert(@"../../../Img/rectangle.png"), UriKind.RelativeOrAbsolute);
             Preview.EndInit();
         }
-        public override UIElement Draw()
+        public UIElement Draw()
         {
-            int checkEndedPoint = 0;
-            if (Points[1].X - Points[0].X > 0)
+            double _x = 0.0;
+            double _y = 0.0;
+            double width = Points[1].X - Points[0].X;
+            double height = Points[1].Y - Points[0].Y;
+
+            if (width < 0)
             {
-                checkEndedPoint = 0;
+                _x = width;
             }
-            else checkEndedPoint = 1;
-
-            double width = Math.Abs(Points[1].X - Points[0].X);
-            double height = Math.Abs(Points[1].Y - Points[0].Y);
-
+            if (height < 0)
+            {
+                _y = height;
+            }
+            
             var element = new Rectangle()
             {
                 StrokeThickness = Configuration == null ? 1.0 : Configuration.Thickness,
@@ -37,15 +45,15 @@ namespace RectangleLib
                 Fill = Configuration?.ColorBrush,
                 Stroke = Configuration?.ColorStroke,
                 StrokeDashArray = Configuration?.StrokeDash,
-                Width = width,
-                Height = height,
+                Width = Math.Abs(width),
+                Height = Math.Abs(height),
             };
-            Canvas.SetLeft(element, Points[checkEndedPoint].X);
-            Canvas.SetTop(element, Points[checkEndedPoint].Y);
+            Canvas.SetLeft(element, Points[0].X + _x);
+            Canvas.SetTop(element, Points[0].Y + _y);
 
             return element;
         }
-        public override IShape Clone()
+        public IShape Clone()
         {
             return new RectangleShape();
         }

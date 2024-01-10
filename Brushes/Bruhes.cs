@@ -1,17 +1,21 @@
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace Contract
 {
-    public class FreehandDrawing : IShape
+    public class FreeBrushes : IShape
     {
-        public override string Name => "Brushes"; 
+        public string Name => "Brushes";
+        public List<Point> Points { get; set; } = new List<Point>();
+        public string Icon => "ellipse";
+        public StateShape? Configuration { get; set; }
+        public BitmapImage? Preview { get; set; }
+        public PointCollection Pointss { get; set; } = new PointCollection();
 
-        public PointCollection Points { get; set; } = new PointCollection();
-
-        public FreehandDrawing()
+        public FreeBrushes()
         {
 
             Preview = new System.Windows.Media.Imaging.BitmapImage();
@@ -19,11 +23,11 @@ namespace Contract
             Preview.UriSource = new Uri(RelativeToAbsoluteConverter.Convert(@"../../../Img/brushes.png"), UriKind.RelativeOrAbsolute);
             Preview.EndInit();
         }
-        public override UIElement Draw()
+        public UIElement Draw()
         {
             var polyline = new Polyline
             {
-                Points = Points, 
+                Points = Pointss, 
                 Stroke = Configuration?.ColorBrush ?? Brushes.Black,
                 StrokeThickness = Configuration?.Thickness ?? 1,
                 StrokeDashArray = Configuration?.StrokeDash ?? null
@@ -32,11 +36,11 @@ namespace Contract
             return polyline;
         }
 
-        public override IShape Clone()
+        public IShape Clone()
         {
-            return new FreehandDrawing
+            return new FreeBrushes
             {
-                Points = new PointCollection(Points), 
+                Pointss = new PointCollection(Pointss), 
                 Configuration = Configuration?.Clone() as StateShape
             };
         }

@@ -1,38 +1,44 @@
-using Contract;
+﻿using Contract;
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace EllipseLib
 {
     public class EllipseShape : IShape
     {
-        public override string Name => "ellipse";
-        
+        public string Name => "ellipse";
+
+        public List<Point> Points { get; set; } = new List<Point>();
+        public StateShape? Configuration { get; set; }
+        public BitmapImage? Preview { get; set; }
         public EllipseShape()
-        {
-            
+        {            
             Preview = new System.Windows.Media.Imaging.BitmapImage();
             Preview.BeginInit();
             Preview.UriSource = new Uri(RelativeToAbsoluteConverter.Convert(@"../../../Img/ellipse.png"), UriKind.RelativeOrAbsolute);
             Preview.EndInit();
         }
-        public override UIElement Draw()
+        public UIElement Draw()
         {
-            int checkEndedPoint = 0;
-            if (Points[1].X - Points[0].X > 0)
-            {
-                checkEndedPoint = 0;
-            }
-            else checkEndedPoint = 1;
+            double _x = 0.0;
+            double _y = 0.0;
+            double width = Points[1].X - Points[0].X;
+            double height = Points[1].Y - Points[0].Y;
 
-            double width = Math.Abs(Points[1].X - Points[0].X);
-            double height = Math.Abs(Points[1].Y - Points[0].Y);
-            
+            if (width < 0)
+            {
+                _x = width;
+            }
+            if (height < 0)
+            {
+                _y = height;
+            }            
             var element = new Ellipse()
             {
                 StrokeThickness = Configuration == null ? 1.0 : Configuration.Thickness,
@@ -42,16 +48,16 @@ namespace EllipseLib
                 StrokeDashArray = Configuration?.StrokeDash,
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Center,
-                Width = width,
-                Height = height,
+                Width = Math.Abs(width),
+                Height = Math.Abs(height),
             };
 
-            Canvas.SetLeft(element, Points[checkEndedPoint].X);
-            Canvas.SetTop(element, Points[checkEndedPoint].Y);
+            Canvas.SetLeft(element, Points[0].X + _x);
+            Canvas.SetTop(element, Points[0].Y + _y);
 
             return element;
         }
-        public override IShape Clone()
+        public IShape Clone()
         {
             return new EllipseShape();
         }

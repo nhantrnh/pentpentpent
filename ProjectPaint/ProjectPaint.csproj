@@ -37,6 +37,7 @@
     <ProjectReference Include="..\EllipseLib\EllipseLib.csproj" />
     <ProjectReference Include="..\LineLib\LineLib.csproj" />
     <ProjectReference Include="..\RectrangleLib\RectrangleLib.csproj" />
+    <ProjectReference Include="..\TextLib\TextLib.csproj" />
   </ItemGroup>
 
   <ItemGroup>
