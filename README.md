@@ -46,7 +46,7 @@
     + 21120144 - Phạm Phúc Thuần - 10 điểm
 
 ## VI. Link video: 
-
+https://youtu.be/UBm3Ux4ZevE
 
 ## VII. Một số lưu ý:
 - .NET Framework 8.0
